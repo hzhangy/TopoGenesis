@@ -1,0 +1,272 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\title{Topological Duality: Fundamental Forces as Dimensional Anchors and the Emergence of Sponge Space}
+\author{Yu Zhang\\ \texttt{zhangyu15@tsinghua.org.cn}}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present a topological duality framework in which the four fundamental forces correspond to distinct edge-addition strategies that drive dimensional emergence. The weak force initiates causal chains ($0\to1$); the electromagnetic force weaves 1D chains into 2D holographic shells ($1\to2$); gravity stitches isolated 2D atomic shells into a macroscopic 3D sponge scaffold ($2\to3$); and the strong force forms $K_4$ cliques that anchor the scaffold and generate mass rent ($3\to4$). Fourteen numerical experiments support this picture, categorized into consistency with established physics and novel predictions. Key observations include: a spectral dimension ladder ($1.00\to2.15\to2.81\to2.38$, with the drop at the strong stage explained by local $K_4$ bandwidth sinking); emergent Newtonian $1/r$ potential from central-mass stitching; heuristic correspondences for Lorentz time dilation and Schwarzschild time delay from a single bandwidth allocation law $f_{\text{int}}^2+f_{\text{ext}}^2=B^2$; a bare topological mass rent ratio of $\approx0.84$ based on minimal rigid units; and a stitching field that emerges spontaneously from mass-induced excretion pressure. The framework interprets mass as frozen internal frequency, space as bandwidth surplus, and force strength as inverse to unit mass rent. Limitations are honestly noted, and falsifiable predictions are provided.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{The Dilemma of Modern Physics}
+Modern physics rests on two remarkably successful yet mutually incompatible foundations: General Relativity and Quantum Field Theory. Both treat the $3+1$ dimensional backdrop as an unexplained initial condition and cannot answer why spacetime is four-dimensional, why the four forces have vastly different strengths, or why elementary particle masses exhibit a specific hierarchy. These questions point to a common root: the lack of a theory for how dimensionality itself arises.
+
+\subsection{The Core Revolution of N.E.A.}
+The Network Emergent Architecture (N.E.A.) posits that spacetime is an emergent causal graph. Each node has a finite computational bandwidth $B$ (corresponding to the speed of light $c$), which must be split between internal updates ($f_{\text{int}}$) and external communication ($f_{\text{ext}}$). All physical phenomena are consequences of resource allocation on this graph, governed by two axioms~\cite{nea123}:
+\begin{enumerate}
+    \item \textbf{Conservation:} Total enthalpy $Q = U + pV$ is globally conserved ($U$ internal, $pV$ external).
+    \item \textbf{Least Action:} The system minimizes total computational cost, leading to the \textbf{Bandwidth Allocation Law}:
+    \begin{equation}
+        f_{\text{int}}^2 + f_{\text{ext}}^2 = B^2.
+    \end{equation}
+\end{enumerate}
+
+\subsection{The Central Thesis: Topological Duality}
+This paper establishes a framework called \textbf{Topological Duality}. Its central thesis is that the four fundamental forces correspond to different strategies of adding edges to the graph, each of which drives a phase transition to a higher dimension. We validate this thesis through fourteen numerical experiments spanning atomic to galactic scales.
+
+\section{Foundational Logic: Forces, Mass, and Space as Bandwidth Accounting}
+
+\subsection{Mass as Frozen Internal Frequency}
+On a graph, internal dynamics are governed by the Laplacian $\mathbf{L}$. To sustain the eigenmodes of $\mathbf{L}$, a node must continuously expend internal bandwidth. The average cost per node is its \textbf{unit mass rent}:
+\begin{equation}
+    U_{\text{unit}}(G) = \frac{1}{|V|} \sum_{\lambda_k \neq 0} \sqrt{\lambda_k}.
+\end{equation}
+A more complex topology demands a higher internal refresh rate. Thus, mass is not an intrinsic property but the amount of bandwidth frozen by a structure.
+
+\subsection{Forces as Cost-Benefit Edge Strategies}
+Adding a long-range edge incurs a cost (the bandwidth rent to maintain it) but provides a benefit (it shortens communication paths). A node will only add such an edge if the benefit outweighs the cost. The optimal connection span depends on the network's density:
+\begin{itemize}
+    \item In a sparse chain ($0\to1$), only nearest-neighbor links are sustainable ($\ell=1$).
+    \item To weave a 2D surface ($1\to2$), links must reach across roughly $\sqrt{N_{\text{loc}}}$ nodes to be effective.
+    \item To stitch a 3D volume ($2\to3$), links must span $N_{\text{loc}}^{1/3}$ nodes.
+    \item In extremely dense cores ($3\to4$), all bandwidth is consumed internally, forming rigid $K_4$ cliques ($\ell\to0$).
+\end{itemize}
+Table~\ref{tab:forces} summarizes this correspondence.
+
+\begin{table}[H]
+\centering
+\caption{Force--operator correspondence from cost-benefit logic.}
+\label{tab:forces}
+\begin{tabular}{l c c c}
+\toprule
+Force & Transition & Sustainable Span & Manifestation \\
+\midrule
+Weak & $0\to1$ & $\ell=1$ & Causal chain initiation \\
+EM & $1\to2$ & $\ell \sim N_{\text{loc}}^{1/2}$ & 2D weaving \\
+Gravity & $2\to3$ & $\ell \sim N_{\text{loc}}^{1/3}$ & 3D stitching \\
+Strong & $3\to4$ & $\ell\to0$ ($K_4$) & Mass anchoring \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Numerical Observations: The Dimensional Ladder}
+
+\subsection{Weak Force ($0\to1$)}
+The first edges trigger a cascade; the spectral dimension $d_s \approx 1.00$. The cost of tearing a chain from the vacuum is immense, reflected in a high unit mass rent ($\approx 17.32$, see Section~5.1).
+
+\subsection{EM Force ($1\to2$): Weaving 2D Shells}
+Adding shortcuts that maximize local clustering raises $d_s$ from $\approx1.1$ to $\approx2.1$ (Fig.~\ref{fig:em_weaving}). This demonstrates the transition from a 1D chain to a 2D surface.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{em_1d_to_2d_weaving.png}
+\caption{Spectral dimension $d_s$ vs.\ weaving probability $p$.}
+\label{fig:em_weaving}
+\end{figure}
+
+\subsection{Gravity ($2\to3$): Stitching 3D Sponge and the Origin of $q$}
+Long-range inter-cellular edges are demand-driven: they exist only where mass anchors require external connectivity to excrete internal enthalpy. In high-density regions, such edges become both necessary and affordable. In low-density galactic outskirts, the absence of mass anchors means the network has no reason to sustain expensive long-range links, and the stitching fractures. Consequently, the effective dimension collapses back toward the 2D baseline. \textbf{This is the origin of the $q\to1$ limit observed in Paper~IV~\cite{paperIV}.}
+
+Figure~\ref{fig:q_collapse} (Experiment B) shows $d_s$ decaying with radial distance as the available bandwidth and connection demand decrease, matching the profile used to fit SPARC rotation curves.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{origin_verification_ABC.png}
+\caption{Left: Optimal stride saturates. Middle: $d_s$ collapses with distance ($q$-parameter origin). Right: Unit mass rent increases with topological dimension.}
+\label{fig:q_collapse}
+\end{figure}
+
+\subsection{Strong Force ($3\to4$): Mass as Traffic Jam}
+$K_4$ cliques are ``bandwidth sinks''. They consume nearly all local bandwidth to maintain their rigid internal structure, leaving almost nothing for external communication. These cliques act as bottlenecks in the global network, causing the macroscopic spectral dimension to drop from $\approx2.81$ to $\approx2.38$ (Fig.~\ref{fig:genesis_ladder}). This is \textbf{topological condensation}: background space is converted into localized matter. The label ``$3\to4$'' refers to the intense local connectivity within the cliques, not to an increase in global diffusion.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{genesis_ladder_gr.png}
+\caption{Dimensional ladder: spectral dimension $d_s$ across the four force stages.}
+\label{fig:genesis_ladder}
+\end{figure}
+
+\section{Sponge Space: How 2D Electrons Feel 3D Gravity}
+
+Nuclei are $K_4$ rigid nodes; electron shells are 2D surfaces attached to them. Gravitational stitching adds long-range connections between nuclei, stretching the 3D scaffold. Because the electron shells are anchored to these nuclei, any deformation of the scaffold is directly transmitted to the shells. This ``substrate-membrane'' coupling explains why electrons, despite being 2D weavers, experience 3D gravity.
+
+Figure~\ref{fig:sponge_stitching} shows $d_s$ rising as stitching intensity $\Gamma$ increases, demonstrating how isolated 2D shells are woven into a 3D sponge.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{sponge_stitching_phase_transition.png}
+\caption{Multi-cell stitching: spectral dimension vs.\ stitching intensity $\Gamma$.}
+\label{fig:sponge_stitching}
+\end{figure}
+
+\subsection{Heuristic Relativistic Correspondences}
+The Bandwidth Allocation Law provides a heuristic correspondence with core relativistic effects (Fig.~\ref{fig:sr_gr}):
+\begin{itemize}
+    \item \textbf{SR:} Setting $f_{\text{ext}} = vB$ yields $f_{\text{int}} = B\sqrt{1-v^2}$, matching the Lorentz factor.
+    \item \textbf{GR:} A central mass $M$ consumes $U$, creating an external bandwidth deficit: the edge weight (communication delay) scales as $w \propto 1/\sqrt{1-2M/r}$, matching the Schwarzschild time delay.
+\end{itemize}
+The Lorentzian signature $(-,+,+,+)$ arises from the directed acyclic nature of the causal graph. A rigorous derivation of the full metric from graph dynamics remains an open problem.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{sr_gr_unification.png}
+\caption{Heuristic relativistic correspondences. Left: Lorentz factor. Middle: Schwarzschild time delay. Right: Sponge scaffold distortion.}
+\label{fig:sr_gr}
+\end{figure}
+
+\section{Mass Rent and the Inverse Duality}
+
+\subsection{The Cost of Minimal Rigid Units}
+$U_{\text{unit}}$ increases with dimension (1D: 1.25; 2D: 1.74; 3D: 2.35; 4D: 2.85). To compare the bare cost of different dimensional anchors, we examine the smallest stable structures: the 3-cycle (representing the electron's 2D weaving unit) and the $K_4$ clique (representing the quark's strong-force anchor). Their bare rent ratio is $\approx0.84$ (Fig.~\ref{fig:mass_rent}). This value is a baseline that establishes the correct trend (higher-dimensional anchors are more expensive). The precise physical mass ratio requires accounting for the large-scale network effects (``bandwidth vortex'') that amplify the cost of confined quarks.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{mass_rent_and_anemia.png}
+\caption{Left: Unit mass rent for 1D line, 1D ring, and $K$-clique. Right: As strong-force anchors proliferate, internal mass $U$ consumes the budget, squeezing manifest space $pV$.}
+\label{fig:mass_rent}
+\end{figure}
+
+\subsection{Inverse Duality}
+Figure~\ref{fig:inverse_duality} shows an inverse relationship: stronger forces generate lighter unit mass rent. Efficient, symmetric topologies distribute bandwidth cheaply; resistive, asymmetric operations (like tearing a vacuum) are extremely expensive.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{inverse_duality.png}
+\caption{Inverse duality: Force strength vs.\ unit mass rent.}
+\label{fig:inverse_duality}
+\end{figure}
+
+\subsection{Stitching Driven by Excretion Pressure}
+A central mass creates a large internal enthalpy $U$ that must be excreted through the external network $pV$. To minimize the total congestion, the system is forced to stitch more intensely near the center, creating shorter paths for the pressure to dissipate. This cost-pressure balance naturally produces a stitching field $\gamma(r)$ that peaks at the center and decays outward. The effective gravitational potential inferred from this field closely follows a $1/r$ profile (Fig.~\ref{fig:variational}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{sponge_variational_emergence_enhanced.png}
+\caption{Stitching field driven by excretion pressure. Left: Optimal $\gamma(r)$. Right: Inferred gravitational potential.}
+\label{fig:variational}
+\end{figure}
+
+\section{Cross-Scale Evidence and Falsifiability}
+
+\subsection{Categorized Evidence}
+We distinguish between results that show consistency with known physics (Table~\ref{tab:verification}) and unique predictions of the N.E.A. framework (Table~\ref{tab:discovery}).
+
+\begin{table}[H]
+\centering
+\caption{Consistency with Established Physics}
+\label{tab:verification}
+\begin{tabularx}{\textwidth}{l c X}
+\toprule
+Phenomenon & Scale & Key Observation \\
+\midrule
+$H_2^+$ bonding curve & Atomic & Reproduces qualitative U-shape; $d_{\text{opt}}=1.062$ (arb. units) \\
+Superconducting phase transition & Condensed & Sharp transition from cooperative weaving \\
+Lorentz time dilation & Relativistic & Follows from $f_{\text{int}} = B\sqrt{1-v^2}$ \\
+Schwarzschild time delay & Relativistic & Follows from bandwidth deficit near mass \\
+Newtonian $1/r$ potential & Stellar & Emerges from central-mass stitching \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{h2plus_complete.png}
+    \caption{$H_2^+$ bonding curve.}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{superconductivity_cooperative.png}
+    \caption{Superconducting transition.}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{sponge_newton_potential.png}
+    \caption{Emergent Newtonian potential.}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{sponge_gr_geodesic.png}
+    \caption{Geodesic distortion.}
+\end{subfigure}
+\caption{Verification of established gravitational phenomena.}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Unique N.E.A. Predictions and Discoveries}
+\label{tab:discovery}
+\begin{tabularx}{\textwidth}{l c X}
+\toprule
+Evidence/Prediction & Scale & Key Result \\
+\midrule
+Dimensional ladder ($0\to1\to2\to3\to4$) & Cosmological & $d_s$ sequence matches force hierarchy \\
+$q$-parameter collapse (Exp.\ B) & Galactic & $d_s(r)$ matches SPARC $q(r)$ profile \\
+Rindler three-pillar~\cite{jacobson} & Fundamental & $dQ/(TS)=8\pi$, winding $\to 1$ \\
+SPARC rotation fits~\cite{paperIV} & Galactic & 76 high-quality fits, blind test passed \\
+Bare mass rent spectrum & Subatomic & $U_{\text{unit}}$ increases with dimension \\
+Inverse duality & All scales & Force strength inversely related to unit mass \\
+Nanowire dimensional regression & Mesoscopic & Electrons predicted to regress to 1D \\
+Drift of $\hbar$ in strong fields & Stellar & Effective $\hbar$ predicted to shift \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Open Problems}
+\begin{enumerate}
+    \item \textbf{Absolute bandwidth scale:} Determining the exact value of $B$ (which sets $\hbar$ and $c$).
+    \item \textbf{Fermionic statistics:} How does node coloring or edge orientation give rise to spin-$\frac{1}{2}$?
+    \item \textbf{Full mass spectrum:} Extending the rent calculation to all Standard Model particles.
+    \item \textbf{Covariant field equations:} Deriving Einstein's equations from the minimum-congestion principle.
+    \item \textbf{Cosmic evolution:} Mapping the dimensional ladder onto the expansion history of the universe.
+\end{enumerate}
+
+\section{Conclusion}
+We have presented a topological duality framework in which the four fundamental forces correspond to cost-benefit edge strategies that drive dimensional phase transitions. Mass is frozen internal frequency; space is the external bandwidth surplus; and the hierarchy of forces is a consequence of topological efficiency. Fourteen numerical experiments, from atomic to galactic scales, provide consistent support. This framework does not introduce new particles or fields; it merely proposes a new set of accounting rules for the computational graph that underlies physical reality. All code and data are available at \url{https://github.com/hzhangy/TopoGenesis}.
+
+\begin{thebibliography}{99}
+\bibitem{nea123} Zhang, Y. (2026). Foundations of Network Emergent Architecture (N.E.A.): Papers I--III. \textit{Zenodo}. \url{https://doi.org/10.5281/zenodo.19565185}
+\bibitem{paperIV} Zhang, Y. (2026). Dark Matter as a Projection Artifact: Observational Evidence from SPARC Galaxy Rotation Curves. \textit{Zenodo}. \url{https://doi.org/10.5281/zenodo.19583957}
+\bibitem{jacobson} Jacobson, T. (1995). Thermodynamics of Spacetime: The Einstein Equation of State. \textit{Phys. Rev. Lett.}, 75, 1260.
+\bibitem{verlinde} Verlinde, E. (2011). On the Origin of Gravity and the Laws of Newton. \textit{JHEP}, 1104, 029.
+\bibitem{Lelli2016} Lelli, F., McGaugh, S. S., \& Schombert, J. M. (2016). SPARC: Mass Models for 175 Disk Galaxies. \textit{AJ}, 152, 157.
+\bibitem{tHooft} 't Hooft, G. (1993). Dimensional reduction in quantum gravity. \textit{arXiv:gr-qc/9310026}.
+\bibitem{ambjorn} Ambj\o rn, J., Jurkiewicz, J., \& Loll, R. (2005). Reconstructing the Universe. \textit{Phys. Rev. D}, 72, 064014.
+\end{thebibliography}
+
+\end{document}
